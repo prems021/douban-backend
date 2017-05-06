@@ -8,6 +8,42 @@ module.exports = function (app) {
   app.use('/user', router)
 }
 
+router.post('/logincheck', function (req, res, next) {
+   var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
+  host: 'localhost',
+  dialect: 'mariadb',
+
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  },
+
+ 
+});
+
+    var User = sequelize.import(__dirname + "/models/tas_users")
+    var username = request.body.username;
+    var password = request.body.password;
+User.findOne({  where: { USERNAME: username,password: password }}).then(function (user) {
+    
+    if(!user)
+    {
+
+      res.send({login:"user not exist"});
+    }
+
+    else 
+    {
+
+       
+          res.send({ login: "login sucess",role: user.ROLE });
+   
+    }
+    
+})
+});
+
 
 router.get('/simple',function (req, res, next) {
   var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
