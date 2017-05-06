@@ -8,7 +8,9 @@ module.exports = function (app) {
   app.use('/user', router)
 }
 
-var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
+
+router.get('/simple',function (req, res, next) {
+  var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
   host: 'localhost',
   dialect: 'mariadb',
 
@@ -22,7 +24,7 @@ var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
 });
 
 
-router.get('/simple',function (req, res, next) {
+  
   response.json({
     title: 'Greetings.',
     text: 'Hello Angular 2'
