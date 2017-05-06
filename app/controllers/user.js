@@ -8,6 +8,27 @@ module.exports = function (app) {
   app.use('/user', router)
 }
 
+var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
+  host: 'localhost',
+  dialect: 'mariadb',
+
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  },
+
+ 
+});
+
+
+router.get('/simple',function (req, res, next) {
+  response.json({
+    title: 'Greetings.',
+    text: 'Hello Angular 2'
+  });
+});
+
 // Create user
 router.post('/', function (req, res, next) {
   var email = req.body.email
@@ -37,6 +58,8 @@ router.post('/', function (req, res, next) {
     })
   }
 })
+
+
 
 // Get user
 router.get('/:id', function (req, res, next) {
