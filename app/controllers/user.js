@@ -25,7 +25,7 @@ router.get('/simple',function (req, res, next) {
 
 
   
-  response.json({
+  res.json({
     title: 'Greetings.',
     text: 'Hello Angular 2'
   });
