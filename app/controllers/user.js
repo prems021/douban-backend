@@ -8,6 +8,30 @@ module.exports = function (app) {
   app.use('/user', router)
 }
 
+
+router.get('/somple', function (req, res, next)  {
+   var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
+  host: 'localhost',
+  dialect: 'mariadb',
+
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  },
+
+ 
+});
+
+    var User = sequelize.import(__dirname + "/models/tas_users")
+   sequelize.query("SELECT * FROM `tas_users`", { type: sequelize.QueryTypes.SELECT})
+  .then(function(users) {
+   response.json(users);
+  })
+});
+
+
+
 router.post('/logincheck', function (req, res, next) {
    var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
   host: 'localhost',
