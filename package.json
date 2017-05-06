@@ -21,6 +21,9 @@
     "jsonwebtoken": "^7.3.0",
     "method-override": "^2.3.0",
     "morgan": "^1.6.1",
+    "sequelize": "^3.24.3",
+     "sequelize-cli": "^2.4.0",
+     "mysql": "^2.13.0",
     "serve-favicon": "^2.3.0",
     "validator": "^7.0.0"
   },
