@@ -23,7 +23,7 @@ router.get('/somple', function (req, res, next)  {
  
 });
 
-    var User = sequelize.import("../models/tas_users")
+    var User = sequelize.import("__dirname + /models/tas_users")
    sequelize.query("SELECT * FROM `tas_users`", { type: sequelize.QueryTypes.SELECT})
   .then(function(users) {
    response.json(users);
