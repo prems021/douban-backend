@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var Sequelize = require('sequelize');
+
 var validator = require('validator')
 var jwt = require('jsonwebtoken')
 
@@ -8,6 +8,18 @@ module.exports = function (app) {
   app.use('/user', router)
 }
 
+var Sequelize = require('Sequelize');
+
+ var sequelize = new Sequelize('mariadb://root:arshavin021@localhost:3306/tas');
+
+sequelize
+  .authenticate()
+  .then(function(!err) {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(function (err) {
+    console.log('Unable to connect to the database:', err);
+  });
 
 
 
