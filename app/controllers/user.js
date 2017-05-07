@@ -10,15 +10,14 @@ module.exports = function (app) {
 
 
 
-
 router.get('/somple', function (req, res, next)  {
   var Sequelize = require('Sequelize');
 
- var sequelize = new Sequelize('mariadb://root:arshavin021@localhost:3306/tas');
+ var sequelize = new Sequelize('mysql://b204e93cac7161:cad08e55@us-cdbr-iron-east-03.cleardb.net:3306/heroku_fcbb3d9e4d63f93');
 
 sequelize
   .authenticate()
-  .then(function(!err) {
+  .then(function(err) {
     console.log('Connection has been established successfully.');
   })
   .catch(function (err) {
