@@ -9,26 +9,26 @@ module.exports = function (app) {
 }
 
 
-// router.get('/somple', function (req, res, next)  {
-//    var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
-//   host: 'localhost',
-//   dialect: 'mariadb',
+router.get('/somple', function (req, res, next)  {
+   var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
+  host: 'localhost',
+  dialect: 'mariadb',
 
-//   pool: {
-//     max: 5,
-//     min: 0,
-//     idle: 10000
-//   },
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  },
 
  
-// });
+});
 
-//    var User = sequelize.import("/tas_users")
-//    sequelize.query("SELECT * FROM `tas_users`", { type: sequelize.QueryTypes.SELECT})
-//   .then(function(users) {
-//    response.json(users);
-//   })
-// });
+   
+   sequelize.query("SELECT * FROM `tas_users`", { type: sequelize.QueryTypes.SELECT})
+  .then(function(users) {
+   response.json(users);
+  })
+});
 
 
 
