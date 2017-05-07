@@ -8,7 +8,11 @@ module.exports = function (app) {
   app.use('/user', router)
 }
 
-var Sequelize = require('Sequelize');
+
+
+
+router.get('/somple', function (req, res, next)  {
+  var Sequelize = require('Sequelize');
 
  var sequelize = new Sequelize('mariadb://root:arshavin021@localhost:3306/tas');
 
@@ -21,27 +25,8 @@ sequelize
     console.log('Unable to connect to the database:', err);
   });
 
-
-
-router.get('/somple', function (req, res, next)  {
-   var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
-  host: 'localhost',
-  dialect: 'mariadb',
-
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  },
-
- 
-});
-
-   
-   sequelize.query("SELECT * FROM `tas_users`", { type: sequelize.QueryTypes.SELECT})
-  .then(function(users) {
-   response.json(users);
-  })
+  
+  
 });
 router.get('/test', function (req, res, next)  {
 var sql = new Sequelize('tas', 'root', 'arshavin021', {
