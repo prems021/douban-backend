@@ -9,87 +9,87 @@ module.exports = function (app) {
 }
 
 
-router.get('/somple', function (req, res, next)  {
-   var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
-  host: 'localhost',
-  dialect: 'mariadb',
+// router.get('/somple', function (req, res, next)  {
+//    var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
+//   host: 'localhost',
+//   dialect: 'mariadb',
 
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  },
-
- 
-});
-
-   var User = sequelize.import("/tas_users")
-   sequelize.query("SELECT * FROM `tas_users`", { type: sequelize.QueryTypes.SELECT})
-  .then(function(users) {
-   response.json(users);
-  })
-});
-
-
-
-router.post('/logincheck', function (req, res, next) {
-   var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
-  host: 'localhost',
-  dialect: 'mariadb',
-
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  },
+//   pool: {
+//     max: 5,
+//     min: 0,
+//     idle: 10000
+//   },
 
  
-});
+// });
 
-    var User = sequelize.import(__dirname + "/models/tas_users")
-    var username = request.body.username;
-    var password = request.body.password;
-User.findOne({  where: { USERNAME: username,password: password }}).then(function (user) {
+//    var User = sequelize.import("/tas_users")
+//    sequelize.query("SELECT * FROM `tas_users`", { type: sequelize.QueryTypes.SELECT})
+//   .then(function(users) {
+//    response.json(users);
+//   })
+// });
+
+
+
+// router.post('/logincheck', function (req, res, next) {
+//    var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
+//   host: 'localhost',
+//   dialect: 'mariadb',
+
+//   pool: {
+//     max: 5,
+//     min: 0,
+//     idle: 10000
+//   },
+
+ 
+// });
+
+//     var User = sequelize.import(__dirname + "/models/tas_users")
+//     var username = request.body.username;
+//     var password = request.body.password;
+// User.findOne({  where: { USERNAME: username,password: password }}).then(function (user) {
     
-    if(!user)
-    {
+//     if(!user)
+//     {
 
-      res.send({login:"user not exist"});
-    }
+//       res.send({login:"user not exist"});
+//     }
 
-    else 
-    {
+//     else 
+//     {
 
        
-          res.send({ login: "login sucess",role: user.ROLE });
+//           res.send({ login: "login sucess",role: user.ROLE });
    
-    }
+//     }
     
-})
-});
+// })
+// });
 
 
-router.get('/simple',function (req, res, next) {
-  var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
-  host: 'localhost',
-  dialect: 'mariadb',
+// router.get('/simple',function (req, res, next) {
+//   var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
+//   host: 'localhost',
+//   dialect: 'mariadb',
 
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  },
+//   pool: {
+//     max: 5,
+//     min: 0,
+//     idle: 10000
+//   },
 
  
-});
+// });
 
 
   
-  res.json({
-    title: 'Greetings.',
-    text: 'Hello Angular 2'
-  });
-});
+//   res.json({
+//     title: 'Greetings.',
+//     text: 'Hello Angular 2'
+//   });
+// });
 
 // Create user
 router.post('/', function (req, res, next) {
