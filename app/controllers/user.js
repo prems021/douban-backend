@@ -60,7 +60,7 @@ module.exports = function (app) {
 
    
    
-   res.send({login:"user not exist"});
+   
 //  User.sync({force: true}).then(function () {
 //   // Table created
 //   return User.create({
