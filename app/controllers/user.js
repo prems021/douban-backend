@@ -1,7 +1,7 @@
 
 var Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('postgres://hnsflljkdhseyr:2b589c9e4a49c30f332004626be8846e241cd8c67d779fa2da179d20062bed87@ec2-54-235-119-27.compute-1.amazonaws.com:5432/d51q8k5ef5phcs');
+var sequelize = new Sequelize('mariadb://root:arshavin021@localhost:3306/tas');
  var User = sequelize.define('user', {
   firstName: {
     type: Sequelize.STRING,
