@@ -4,6 +4,7 @@ var sequelize = new Sequelize('tas', 'root', 'arshavin021',
                               {
   host: 'localhost',
   dialect: 'mariadb',
+  port: 3306 ,
 
   pool: {
     max: 5,
