@@ -1,8 +1,6 @@
 var express = require('express')
 var router = express.Router()
 var Sequelize = require('Sequelize');
-var validator = require('validator')
-var jwt = require('jsonwebtoken')
 
 module.exports = function (app) {
   app.use('/user', router)
@@ -10,23 +8,23 @@ module.exports = function (app) {
 
 
 
-router.get('/somple', function (req, res, next)  {
+// router.get('/somple', function (req, res, next)  {
   
 
- var sequelize = new Sequelize('mysql://b204e93cac7161:cad08e55@us-cdbr-iron-east-03.cleardb.net:3306/heroku_fcbb3d9e4d63f93');
+//  var sequelize = new Sequelize('mysql://b204e93cac7161:cad08e55@us-cdbr-iron-east-03.cleardb.net:3306/heroku_fcbb3d9e4d63f93');
 
-sequelize
-  .authenticate()
-  .then(function(err) {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(function (err) {
-    console.log('Unable to connect to the database:', err);
-  });
+// sequelize
+//   .authenticate()
+//   .then(function(err) {
+//     console.log('Connection has been established successfully.');
+//   })
+//   .catch(function (err) {
+//     console.log('Unable to connect to the database:', err);
+//   });
 
   
   
-});
+// });
 router.get('/test', function (req, res, next)  {
 var sql = new Sequelize('tas', 'root', 'arshavin021', {
     host: 'localhost',
