@@ -113,7 +113,10 @@ sequelize.sync().then(function() {
   });
 }).then(function(jane) {
 
-res.send({"hi"});
+res.json({
+    title: 'Greetings.',
+    text: 'Hello Angular 2'
+  });
 
 });
    });
