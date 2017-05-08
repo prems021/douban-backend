@@ -1,6 +1,17 @@
 
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize('tas', 'root', 'arshavin021');
+var sequelize = new Sequelize('tas', 'root', 'arshavin021',
+                              {
+  host: 'localhost',
+  dialect: 'mariadb',
+
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  }
+                             
+});
 
 var User = sequelize.define('user', {
   username: Sequelize.STRING,
