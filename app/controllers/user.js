@@ -59,12 +59,13 @@ module.exports = function (app) {
  router.get('/test', function (req, res, next)  {
    
    
-  
-   
-   sequelize.query("SELECT * FROM `user`", { type: sequelize.QueryTypes.SELECT})
-  .then(function(users) {
+  User.findAll({
+  attributes: ['firstname', 'lastname']
+}).then(function(users) {
    response.json(users);
-  })
+  });
+   
+  
 
 });
    
