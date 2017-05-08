@@ -4,7 +4,7 @@ var sequelize = new Sequelize('tas', 'root', 'arshavin021',
                               {
   host: 'localhost',
   dialect: 'mariadb',
-  port: 3306 ,
+  
 
   pool: {
     max: 5,
@@ -112,9 +112,9 @@ sequelize.sync().then(function() {
     birthday: new Date(1980, 6, 20)
   });
 }).then(function(jane) {
-  console.log(jane.get({
-    plain: true
-  }));
+
+res.send({"hi"});
+
 });
    });
 
