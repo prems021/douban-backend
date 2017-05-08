@@ -24,23 +24,23 @@ module.exports = function (app) {
 
   
   
+// // });
+// router.get('/test', function (req, res, next)  {
+// var sql = new Sequelize('tas', 'root', 'arshavin021', {
+//     host: 'localhost',
+//     port: 3306,
+//     dialect: 'mariadb'
 // });
-router.get('/test', function (req, res, next)  {
-var sql = new Sequelize('tas', 'root', 'arshavin021', {
-    host: 'localhost',
-    port: 3306,
-    dialect: 'mariadb'
-});
 
-var test = sql.authenticate()
-    .then(function () {
-        console.log("CONNECTED! ");
-    })
-    .catch(function (err) {
-        console.log("SOMETHING DONE GOOFED");
-    })
-    .done();
-});
+// var test = sql.authenticate()
+//     .then(function () {
+//         console.log("CONNECTED! ");
+//     })
+//     .catch(function (err) {
+//         console.log("SOMETHING DONE GOOFED");
+//     })
+//     .done();
+// });
 // router.post('/logincheck', function (req, res, next) {
 //    var sequelize = new Sequelize('tas', 'root', 'arshavin021', {
 //   host: 'localhost',
