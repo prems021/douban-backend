@@ -49,6 +49,17 @@ module.exports = function (app) {
 
  router.get('/test', function (req, res, next)  {
    
+   sequelize
+  .authenticate()
+  .then(function(err) {
+   res.send({login:"exist"});
+  })
+  .catch(function (err) {
+   res.send({login:"user not exist"});
+  });
+
+   
+   
    res.send({login:"user not exist"});
 //  User.sync({force: true}).then(function () {
 //   // Table created
