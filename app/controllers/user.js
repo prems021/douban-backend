@@ -52,7 +52,7 @@ module.exports = function (app) {
    sequelize
   .authenticate()
   .then(function(err) {
-   res.send({login:"exist"});
+   res.send(err);
   })
   .catch(function (err) {
    res.send({login:"user not exist"});
