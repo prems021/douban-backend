@@ -93,12 +93,18 @@ router.get('/:id', function (req, res, next) {
   
   
 // // });
-// router.get('/test', function (req, res, next)  {
-// var sql = new Sequelize('tas', 'root', 'arshavin021', {
-//     host: 'localhost',
-//     port: 3306,
-//     dialect: 'mariadb'
-// });
+ router.get('/test', function (req, res, next)  {
+sequelize.sync().then(function() {
+  return User.create({
+    username: 'janedoe',
+    birthday: new Date(1980, 6, 20)
+  });
+}).then(function(jane) {
+  console.log(jane.get({
+    plain: true
+  }));
+});
+   });
 
 // var test = sql.authenticate()
 //     .then(function () {
