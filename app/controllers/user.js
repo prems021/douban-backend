@@ -1,4 +1,17 @@
 
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('tas', 'root', 'arshavin021');
+
+var User = sequelize.define('user', {
+  username: Sequelize.STRING,
+  birthday: Sequelize.DATE
+});
+
+
+
+
+
+
 var express = require('express')
 var router = express.Router()
 
@@ -63,7 +76,7 @@ router.get('/:id', function (req, res, next) {
     }
   })
 })
-// router.get('/somple', function (req, res, next)  {
+//router.get('/somple', function (req, res, next)  {
   
 
 //  var sequelize = new Sequelize('mysql://b204e93cac7161:cad08e55@us-cdbr-iron-east-03.cleardb.net:3306/heroku_fcbb3d9e4d63f93');
