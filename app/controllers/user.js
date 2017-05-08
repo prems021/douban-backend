@@ -60,7 +60,7 @@ module.exports = function (app) {
    
    
   User.findAll({
-  attributes: ['first_name', 'lastname']
+  attributes: ['firstname', 'lastname']
 }).then(function(users) {
    response.json(users);
   });
