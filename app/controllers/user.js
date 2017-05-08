@@ -59,12 +59,13 @@ module.exports = function (app) {
  router.get('/test', function (req, res, next)  {
    
    
-   User.sync({force: true}).then(function () {
-  // Table created
-  return User.create({
-    firstName: 'John',
-    lastName: 'Hancock'
-  });
+  
+   
+   sequelize.query("SELECT * FROM `user`", { type: sequelize.QueryTypes.SELECT})
+  .then(function(users) {
+   response.json(users);
+  })
+
 });
    
    
