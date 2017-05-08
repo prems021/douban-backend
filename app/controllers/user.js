@@ -1,23 +1,34 @@
 
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize('tas', 'root', 'arshavin021',
-                              {
-  host: 'localhost',
-  dialect: 'mariadb',
-  
 
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  }
-                             
-});
+var sequelize = new Sequelize('postgres://hnsflljkdhseyr:2b589c9e4a49c30f332004626be8846e241cd8c67d779fa2da179d20062bed87@ec2-54-235-119-27.compute-1.amazonaws.com:5432/d51q8k5ef5phcs');
+ 
 
-var User = sequelize.define('user', {
-  username: Sequelize.STRING,
-  birthday: Sequelize.DATE
-});
+var User = sequelize.define('tas_users', {
+    ID: {
+      type: DataTypes.INTEGER(4),
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    USERNAME: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    PASSWORD: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+   
+    ROLE: {
+      type: DataTypes.INTEGER(3),
+      allowNull: true,
+      defaultValue: '1'
+    }
+  }, {
+    tableName: 'tas_users',
+    timestamps: false
+  });
 
 
 
@@ -37,18 +48,12 @@ module.exports = function (app) {
 
 
  router.get('/test', function (req, res, next)  {
-sequelize.sync().then(function() {
+ User.sync({force: true}).then(function () {
+  // Table created
   return User.create({
-    username: 'janedoe',
-    birthday: new Date(1980, 6, 20)
+    USERNAME: 'John',
+    PASSWORD: 'Hancock'
   });
-}).then(function(jane) {
-
-res.json({
-    title: 'Greetings.',
-    text: 'Hello Angular 2'
-  });
-
 });
    });
 
