@@ -77,6 +77,6 @@ module.exports = function (app) {
 //     PASSWORD: 'Hancock'
 //   });
 // });
-   });
+ 
 
 
