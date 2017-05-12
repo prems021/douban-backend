@@ -61,9 +61,16 @@ module.exports = function (app) {
 });
    
   User.findAll({
-  attributes: ['firstname', 'lastname']
+  attributes: ['firstName', 'lastName']
 }).then(function(users) {
-   response.json(users);
+    if(users)
+    {
+   res.json(users);
+    }
+    else
+    {
+     res.json("no data");
+    }
   });
    
   
