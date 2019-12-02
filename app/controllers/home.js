@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
 
 
 router.get('/api', function (req, res, next) {
-   response.json({
+   res.json({
         Devoloper: "Premji Thankaji",
         Framework: "A7.0 + sequlize + nodejs",
     });
