@@ -10,3 +10,13 @@ router.get('/', function (req, res, next) {
     title: 'Kshethra server'
   });
 });
+
+
+router.get('/api', function (req, res, next) {
+   response.json({
+        Devoloper: "Premji Thankaji",
+        Framework: "A7.0 + sequlize + nodejs",
+    });
+});
+
+
